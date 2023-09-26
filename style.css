@@ -1,25 +1,30 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     padding: 0px 20px;
     background-color: rgb(190, 190, 241);
 }
-div.item-wrapper{
+
+div.item-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.title{
+
+.title {
     color: rgb(202, 23, 172);
     font-size: 40px;
     margin-bottom: 40px;
-    text-decoration:2px underline rgb(29, 29, 220);;
+    text-decoration: 2px underline rgb(29, 29, 220);
+    ;
 }
-.category{
+
+.category {
     background-color: white;
     margin: 20px;
     padding: 20px;
@@ -31,25 +36,29 @@ div.item-wrapper{
     width: 100%;
     box-shadow: 0px 0px 20px gold;
 }
-.subtitle{
+
+.subtitle {
     text-align: center;
     width: 100%;
     color: rgb(29, 29, 220);
     font-size: 30px;
     margin-bottom: 10px;
-    text-decoration:2px underline wavy greenyellow;
+    text-decoration: 2px underline wavy greenyellow;
 }
-.item-list a img{
+
+.item-list a img {
     height: 200px;
     margin: 10px;
     border-radius: 21px;
     border: 2px solid white;
 }
-.item-list a img:hover{
+
+.item-list a img:hover {
     box-shadow: 0px 2px 10px blue;
 }
+
 @media (max-width:699px) {
-    .item-list a img{
+    .item-list a img {
         width: 30vw;
         height: auto;
     }
