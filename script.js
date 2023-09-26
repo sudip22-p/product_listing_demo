@@ -1,8 +1,12 @@
 const imgs=document.querySelectorAll("img");
+const boxes=document.querySelectorAll(".item-box");
+console.log(boxes);
 function actionOnScrollingStart() {
-    console.log('User started scrolling.');
     imgs.forEach(img => {
         img.style.filter="blur(3px)";
+    });
+    boxes.forEach(box => {
+        box.style.opacity="0.4";
     });
     setTimeout(() => {
         actionOnScrollingStop();
@@ -14,7 +18,10 @@ function actionOnScrollingStop() {
         img.style.filter="blur(0)";
         img.style.transition="1s";
     });
-    console.log('User stopped scrolling.');
+    boxes.forEach(box => {
+        box.style.opacity="1";
+        box.style.transition="1s";
+    });
 }
 
 window.addEventListener('scroll', () => {
