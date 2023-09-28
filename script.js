@@ -1,6 +1,5 @@
 const imgs=document.querySelectorAll("img");
 const boxes=document.querySelectorAll(".item-box");
-console.log(boxes);
 function actionOnScrollingStart() {
     imgs.forEach(img => {
         img.style.filter="blur(3px)";
@@ -26,4 +25,24 @@ function actionOnScrollingStop() {
 
 window.addEventListener('scroll', () => {
     actionOnScrollingStart();
+});
+
+function performDisplayOp(el){
+    const itemEl = el.parentNode.parentNode.nextElementSibling;
+    if(el.innerHTML==="Show"){
+        el.innerHTML="Hide";
+        itemEl.classList.toggle("hide");
+    }else{
+        el.innerHTML="Show";
+        itemEl.classList.toggle("hide");
+    }
+}
+
+/*on clicking open*/
+const btns=document.querySelectorAll(".btn");
+btns.forEach(btn => {
+    btn.addEventListener("click",(event)=>{
+        let clickedBtnEl=event.target;
+        performDisplayOp(clickedBtnEl);
+    });
 });
