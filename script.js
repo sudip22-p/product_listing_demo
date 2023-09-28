@@ -1,11 +1,11 @@
-const imgs=document.querySelectorAll("img");
-const boxes=document.querySelectorAll(".item-box");
+const imgs = document.querySelectorAll("img");
+const boxes = document.querySelectorAll(".item-box");
 function actionOnScrollingStart() {
     imgs.forEach(img => {
-        img.style.filter="blur(3px)";
+        img.style.filter = "blur(3px)";
     });
     boxes.forEach(box => {
-        box.style.opacity="0.4";
+        box.style.opacity = "0.4";
     });
     setTimeout(() => {
         actionOnScrollingStop();
@@ -14,12 +14,12 @@ function actionOnScrollingStart() {
 
 function actionOnScrollingStop() {
     imgs.forEach(img => {
-        img.style.filter="blur(0)";
-        img.style.transition="1s";
+        img.style.filter = "blur(0)";
+        img.style.transition = "1s";
     });
     boxes.forEach(box => {
-        box.style.opacity="1";
-        box.style.transition="1s";
+        box.style.opacity = "1";
+        box.style.transition = "1s";
     });
 }
 
@@ -27,22 +27,22 @@ window.addEventListener('scroll', () => {
     actionOnScrollingStart();
 });
 
-function performDisplayOp(el){
+function performDisplayOp(el) {
     const itemEl = el.parentNode.parentNode.nextElementSibling;
-    if(el.innerHTML==="Show"){
-        el.innerHTML="Hide";
+    if (el.innerHTML === "Show") {
+        el.innerHTML = "Hide";
         itemEl.classList.toggle("hide");
-    }else{
-        el.innerHTML="Show";
+    } else {
+        el.innerHTML = "Show";
         itemEl.classList.toggle("hide");
     }
 }
 
 /*on clicking open*/
-const btns=document.querySelectorAll(".btn");
+const btns = document.querySelectorAll(".btn");
 btns.forEach(btn => {
-    btn.addEventListener("click",(event)=>{
-        let clickedBtnEl=event.target;
+    btn.addEventListener("click", (event) => {
+        let clickedBtnEl = event.target;
         performDisplayOp(clickedBtnEl);
     });
 });
